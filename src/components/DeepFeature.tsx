@@ -2,7 +2,7 @@ import ProjectReportMockup from "@/components/ProjectReportMockup";
 
 export default function DeepFeature() {
   return (
-    <section id="how-it-works" className="bg-[#fffbf8] py-28">
+    <section id="how-it-works" className="bg-[#fffbf8] py-16 md:py-28">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 md:grid-cols-2">
         <div className="flex flex-col gap-7">
           <h2 className="text-4xl font-extrabold leading-tight tracking-tighter text-gray-900 sm:text-5xl">

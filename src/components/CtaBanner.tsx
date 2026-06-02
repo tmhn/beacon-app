@@ -1,6 +1,6 @@
 export default function CtaBanner() {
   return (
-    <section className="bg-orange-500 py-24">
+    <section className="bg-orange-500 py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <h2 className="mb-4 text-4xl font-extrabold tracking-tighter text-white sm:text-5xl">
           Ready to illuminate<br />your codebase?

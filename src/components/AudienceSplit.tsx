@@ -23,7 +23,7 @@ const audiences = [
 
 export default function AudienceSplit() {
   return (
-    <section className="bg-white py-28">
+    <section className="bg-white py-16 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-14 text-center">
           <h2 className="text-3xl font-extrabold tracking-tighter text-gray-900 sm:text-4xl">

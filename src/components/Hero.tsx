@@ -3,7 +3,7 @@ import HeroCarousel from "@/components/HeroCarousel";
 export default function Hero() {
   return (
     <section className="bg-[#fffbf8]">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 px-6 py-24 md:grid-cols-2 md:py-32">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-14 md:grid-cols-2 md:gap-14 md:py-32">
         {/* Left: copy */}
         <div className="flex flex-col items-start gap-7">
           <p className="text-xs font-semibold uppercase tracking-widest text-orange-500">

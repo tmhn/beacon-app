@@ -32,7 +32,7 @@ const features = [
 
 export default function FeatureCards() {
   return (
-    <section id="features" className="bg-white py-24">
+    <section id="features" className="bg-white py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-14">
           <h2 className="text-3xl font-extrabold tracking-tighter text-gray-900 sm:text-4xl">
