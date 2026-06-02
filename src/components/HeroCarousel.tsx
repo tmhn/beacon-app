@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import HeroMockupA from "./HeroMockupA";
 import HeroMockupB from "./HeroMockupB";
 import HeroMockupC from "./HeroMockupC";
@@ -16,15 +16,35 @@ const slides = [
 
 export default function HeroCarousel() {
   const [active, setActive] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const startRef = useRef(Date.now());
+  const tickRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const startSlide = (index: number) => {
+    if (tickRef.current) clearInterval(tickRef.current);
+    setActive(index);
+    setProgress(0);
+    startRef.current = Date.now();
+
+    tickRef.current = setInterval(() => {
+      const elapsed = Date.now() - startRef.current;
+      const pct = Math.min((elapsed / DURATION) * 100, 100);
+      setProgress(pct);
+      if (elapsed >= DURATION) {
+        startSlide((index + 1) % slides.length);
+      }
+    }, 50);
+  };
 
   useEffect(() => {
-    const t = setInterval(() => setActive((a) => (a + 1) % slides.length), DURATION);
-    return () => clearInterval(t);
+    startSlide(0);
+    return () => { if (tickRef.current) clearInterval(tickRef.current); };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="flex w-full max-w-lg flex-col gap-5">
-      {/* Viewport — clips the sliding stack */}
+      {/* Viewport */}
       <div className="w-full overflow-hidden" style={{ height: SLIDE_H }}>
         <div
           className="transition-transform duration-700 ease-in-out"
@@ -47,18 +67,14 @@ export default function HeroCarousel() {
         {slides.map(({ label }, i) => (
           <button
             key={i}
-            onClick={() => setActive(i)}
+            onClick={() => startSlide(i)}
             className="flex flex-1 flex-col gap-1.5 text-left"
           >
             <div className="h-0.5 w-full overflow-hidden rounded-full bg-gray-200">
-              {i === active && (
-                <div
-                  key={active}
-                  className="h-full rounded-full bg-orange-500"
-                  style={{ animation: `carousel-progress ${DURATION}ms linear forwards` }}
-                />
-              )}
-              {i < active && <div className="h-full w-full rounded-full bg-orange-500" />}
+              <div
+                className="h-full rounded-full bg-orange-500 transition-none"
+                style={{ width: i === active ? `${progress}%` : i < active ? "100%" : "0%" }}
+              />
             </div>
             <span className={`text-xs font-semibold transition-colors ${i === active ? "text-gray-800" : "text-gray-400"}`}>
               {label}
