@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const links = [
   { label: "Features", href: "#features" },
@@ -15,12 +16,12 @@ export default function Nav() {
     <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-orange-500" />
           <span className="text-sm font-bold tracking-tight text-gray-900">
             Beacon
           </span>
-        </a>
+        </Link>
 
         {/* Centre links — desktop only */}
         <nav className="hidden items-center gap-8 md:flex">
