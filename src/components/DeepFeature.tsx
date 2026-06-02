@@ -5,9 +5,6 @@ export default function DeepFeature() {
     <section id="how-it-works" className="bg-[#fffbf8] py-28">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 md:grid-cols-2">
         <div className="flex flex-col gap-7">
-          <p className="text-xs font-semibold uppercase tracking-widest text-orange-500">
-            How it works
-          </p>
           <h2 className="text-4xl font-extrabold leading-tight tracking-tighter text-gray-900 sm:text-5xl">
             See the full picture.
             <br />

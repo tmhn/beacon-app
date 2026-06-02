@@ -1,21 +1,16 @@
-import HeroMockup from "@/components/HeroMockup";
+import HeroCarousel from "@/components/HeroCarousel";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#fffbf8]">
       {/* Warm radial glow */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_60%_-10%,rgba(249,115,22,0.1),transparent)]" />
-      {/* Subtle dot grid */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.03]"
-        style={{ backgroundImage: 'radial-gradient(circle, #f97316 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
-
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 px-6 py-24 md:grid-cols-2 md:py-32">
         {/* Left: copy */}
         <div className="flex flex-col items-start gap-7">
-          <span className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-semibold tracking-widest text-orange-600 uppercase">
-            <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
+          <p className="text-xs font-semibold uppercase tracking-widest text-orange-500">
             Claude AI Skill
-          </span>
+          </p>
 
           <h1 className="text-5xl font-extrabold leading-[1.08] tracking-tighter text-gray-900 sm:text-6xl lg:text-7xl">
             No docs?
@@ -36,7 +31,7 @@ export default function Hero() {
               href="#"
               className="rounded-full bg-orange-500 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-orange-200 transition-all hover:bg-orange-600 hover:shadow-orange-300"
             >
-              Get started free
+              Install the skill
             </a>
             <a
               href="#how-it-works"
@@ -47,9 +42,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: mockup */}
+        {/* Right: carousel */}
         <div className="flex justify-center md:justify-end">
-          <HeroMockup />
+          <HeroCarousel />
         </div>
       </div>
     </section>

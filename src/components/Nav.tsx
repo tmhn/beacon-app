@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const links = [
@@ -17,8 +18,8 @@ export default function Nav() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="h-2.5 w-2.5 rounded-full bg-orange-500" />
-          <span className="text-sm font-extrabold tracking-tight text-gray-900">
+          <Image src="/icon.png" alt="Beacon" width={26} height={26} className="bg-transparent" />
+          <span className="text-sm font-bold tracking-tight text-gray-900">
             Beacon
           </span>
         </Link>
@@ -40,15 +41,9 @@ export default function Nav() {
         <div className="flex items-center gap-3">
           <a
             href="#"
-            className="hidden text-sm text-gray-500 transition-colors hover:text-gray-900 md:block"
-          >
-            Sign in
-          </a>
-          <a
-            href="#"
             className="rounded-full bg-orange-500 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-orange-600"
           >
-            Get started free
+            Install the skill
           </a>
           {/* Hamburger — mobile only */}
           <button
@@ -77,13 +72,6 @@ export default function Nav() {
                 {label}
               </a>
             ))}
-            <a
-              href="#"
-              onClick={() => setOpen(false)}
-              className="text-sm text-gray-600 transition-colors hover:text-gray-900"
-            >
-              Sign in
-            </a>
           </nav>
         </div>
       )}

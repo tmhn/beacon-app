@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const nav: Record<string, string[]> = {
   Product: ["Features", "How it works", "Changelog"],
-  Docs: ["Getting started", "API reference", "Examples"],
+  Docs: ["Getting started", "Installation", "Examples"],
   More: ["About", "Contact"],
 };
 
@@ -13,7 +14,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
-              <span className="h-2.5 w-2.5 rounded-full bg-orange-500" />
+              <Image src="/icon.png" alt="Beacon" width={18} height={18} />
               <span className="text-sm font-bold text-gray-900">Beacon</span>
             </Link>
             <p className="mt-3 text-xs leading-relaxed text-gray-400">

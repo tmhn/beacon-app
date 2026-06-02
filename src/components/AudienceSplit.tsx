@@ -39,7 +39,7 @@ export default function AudienceSplit() {
           {audiences.map(({ icon, heading, bullets }) => (
             <div
               key={heading}
-              className="rounded-2xl border border-gray-100 bg-gray-50 p-8 [border-top:3px_solid_#f97316]"
+              className="rounded-xl border border-gray-100 bg-gray-50 p-8"
             >
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-xl shadow-sm">

@@ -8,6 +8,21 @@
   font-display: swap;
 }
 
+@keyframes carousel-progress {
+  from { width: 0% }
+  to   { width: 100% }
+}
+
 @theme inline {
   --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Match orange scale to icon.png (#fb4f39) */
+  --color-orange-50:  #fff2f0;
+  --color-orange-100: #ffe1dd;
+  --color-orange-200: #ffc3bb;
+  --color-orange-300: #fd9d90;
+  --color-orange-400: #fc6b58;
+  --color-orange-500: #fb4f39;
+  --color-orange-600: #e6361f;
+  --color-orange-700: #c22b17;
 }

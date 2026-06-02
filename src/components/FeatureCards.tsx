@@ -34,10 +34,7 @@ export default function FeatureCards() {
   return (
     <section id="features" className="bg-white py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-14 text-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-orange-500">
-            Core capabilities
-          </p>
+        <div className="mb-14">
           <h2 className="text-3xl font-extrabold tracking-tighter text-gray-900 sm:text-4xl">
             Everything your team needs to get up to speed
           </h2>
@@ -47,7 +44,7 @@ export default function FeatureCards() {
           {features.map(({ icon, title, body }) => (
             <div
               key={title}
-              className="group rounded-2xl border border-gray-100 bg-white p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-orange-100 hover:shadow-lg hover:shadow-orange-50"
+              className="group rounded-xl border border-gray-100 bg-white p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-orange-100 hover:shadow-lg hover:shadow-orange-50"
             >
               <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50 text-orange-500 transition-colors group-hover:bg-orange-500 group-hover:text-white">
                 {icon}
