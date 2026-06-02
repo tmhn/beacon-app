@@ -17,7 +17,7 @@ const lines = [
 
 export default function HeroMockupA() {
   return (
-    <div className="w-full max-w-lg overflow-hidden rounded-2xl bg-gray-950 shadow-2xl shadow-gray-900/20 ring-1 ring-white/10">
+    <div className="w-full max-w-lg overflow-hidden rounded-2xl bg-gray-950 ring-1 ring-white/10">
       {/* Window chrome */}
       <div className="flex items-center gap-1.5 border-b border-white/10 bg-gray-900 px-4 py-3">
         <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
