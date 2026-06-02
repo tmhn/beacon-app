@@ -18,7 +18,7 @@ export default function Nav() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-orange-500" />
-          <span className="text-sm font-bold tracking-tight text-gray-900">
+          <span className="text-sm font-extrabold tracking-tight text-gray-900">
             Beacon
           </span>
         </Link>
@@ -46,7 +46,7 @@ export default function Nav() {
           </a>
           <a
             href="#"
-            className="rounded-lg bg-orange-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-orange-600"
+            className="rounded-full bg-orange-500 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-orange-600"
           >
             Get started free
           </a>

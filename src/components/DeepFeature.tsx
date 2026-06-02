@@ -2,14 +2,16 @@ import ProjectReportMockup from "@/components/ProjectReportMockup";
 
 export default function DeepFeature() {
   return (
-    <section id="how-it-works" className="bg-gray-50 py-20">
+    <section id="how-it-works" className="bg-[#fffbf8] py-28">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 md:grid-cols-2">
-        {/* Left: copy */}
-        <div className="flex flex-col gap-6">
-          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-4xl">
+        <div className="flex flex-col gap-7">
+          <p className="text-xs font-semibold uppercase tracking-widest text-orange-500">
+            How it works
+          </p>
+          <h2 className="text-4xl font-extrabold leading-tight tracking-tighter text-gray-900 sm:text-5xl">
             See the full picture.
             <br />
-            Make better decisions.
+            <span className="text-gray-400">Make better decisions.</span>
           </h2>
           <p className="text-base leading-relaxed text-gray-500">
             Beacon doesn&apos;t just scan files — it builds a mental model of
@@ -18,13 +20,12 @@ export default function DeepFeature() {
           </p>
           <a
             href="#"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-orange-500 transition-colors hover:text-orange-600"
+            className="inline-flex w-fit items-center gap-1.5 rounded-full border border-orange-200 bg-white px-5 py-2.5 text-sm font-semibold text-orange-500 transition-all hover:border-orange-300 hover:bg-orange-50"
           >
             Learn how it works →
           </a>
         </div>
 
-        {/* Right: mockup */}
         <div className="flex justify-center md:justify-end">
           <ProjectReportMockup />
         </div>

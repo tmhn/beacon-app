@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/plus-jakarta-sans.woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
-  --font-sans: var(--font-geist-sans);
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
 }

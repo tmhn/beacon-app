@@ -2,23 +2,27 @@ import HeroMockup from "@/components/HeroMockup";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white">
-      {/* Subtle radial glow behind hero */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(249,115,22,0.08),transparent)]" />
+    <section className="relative overflow-hidden bg-[#fffbf8]">
+      {/* Warm radial glow */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_60%_-10%,rgba(249,115,22,0.1),transparent)]" />
+      {/* Subtle dot grid */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        style={{ backgroundImage: 'radial-gradient(circle, #f97316 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
 
-      <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
+      <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 px-6 py-24 md:grid-cols-2 md:py-32">
         {/* Left: copy */}
-        <div className="flex flex-col items-start gap-6">
-          <span className="text-xs font-semibold uppercase tracking-widest text-orange-500">
+        <div className="flex flex-col items-start gap-7">
+          <span className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1 text-xs font-semibold tracking-widest text-orange-600 uppercase">
+            <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
             Claude AI Skill
           </span>
 
-          <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-gray-900 sm:text-5xl">
+          <h1 className="text-5xl font-extrabold leading-[1.08] tracking-tighter text-gray-900 sm:text-6xl lg:text-7xl">
             No docs?
             <br />
             No problem.
             <br />
-            <span className="text-orange-500">Beacon finds the signal.</span>
+            <span className="text-orange-500">Beacon finds<br />the signal.</span>
           </h1>
 
           <p className="max-w-md text-lg leading-relaxed text-gray-500">
@@ -30,13 +34,13 @@ export default function Hero() {
           <div className="flex flex-wrap items-center gap-3">
             <a
               href="#"
-              className="rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-orange-600"
+              className="rounded-full bg-orange-500 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-orange-200 transition-all hover:bg-orange-600 hover:shadow-orange-300"
             >
               Get started free
             </a>
             <a
               href="#how-it-works"
-              className="rounded-lg border border-gray-200 px-6 py-3 text-sm font-semibold text-gray-700 transition-colors hover:border-gray-300 hover:bg-gray-50"
+              className="rounded-full border border-gray-200 bg-white px-7 py-3 text-sm font-semibold text-gray-700 transition-all hover:border-gray-300 hover:bg-gray-50"
             >
               See how it works →
             </a>

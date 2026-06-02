@@ -23,29 +23,36 @@ const audiences = [
 
 export default function AudienceSplit() {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-white py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="mb-12 text-center text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-          Built for humans{" "}
-          <span className="text-orange-500">&amp;</span> AI agents
-        </h2>
+        <div className="mb-14 text-center">
+          <h2 className="text-3xl font-extrabold tracking-tighter text-gray-900 sm:text-4xl">
+            Built for humans{" "}
+            <span className="text-orange-500">&amp;</span> AI agents
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-base text-gray-500">
+            Whether you&apos;re a developer onboarding to a new codebase or an AI agent starting a session, Beacon has you covered.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {audiences.map(({ icon, heading, bullets }) => (
             <div
               key={heading}
-              className="rounded-xl border border-gray-100 bg-gray-50 p-8"
+              className="rounded-2xl border border-gray-100 bg-gray-50 p-8 [border-top:3px_solid_#f97316]"
             >
               <div className="mb-6 flex items-center gap-3">
-                <span className="text-2xl">{icon}</span>
-                <h3 className="text-base font-semibold text-gray-900">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-xl shadow-sm">
+                  {icon}
+                </div>
+                <h3 className="text-base font-bold text-gray-900">
                   {heading}
                 </h3>
               </div>
               <ul className="space-y-3">
                 {bullets.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-orange-400" />
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-orange-400" />
                     <span className="text-sm leading-relaxed text-gray-600">
                       {item}
                     </span>
