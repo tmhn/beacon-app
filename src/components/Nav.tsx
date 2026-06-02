@@ -78,6 +78,7 @@ export default function Nav() {
             ))}
             <a
               href="#"
+              onClick={() => setOpen(false)}
               className="text-sm text-gray-600 transition-colors hover:text-gray-900"
             >
               Sign in
