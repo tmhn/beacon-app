@@ -38,13 +38,8 @@ export default function HeroMockupB() {
 
       {/* Graph canvas */}
       <div
-        className="relative overflow-hidden"
-        style={{
-          height: 248,
-          backgroundColor: "#f9fafb",
-          backgroundImage: "radial-gradient(circle, #d1d5db 1px, transparent 1px)",
-          backgroundSize: "18px 18px",
-        }}
+        className="relative overflow-hidden bg-[#f9fafb]"
+        style={{ height: 248 }}
       >
         <svg
           width="100%"
