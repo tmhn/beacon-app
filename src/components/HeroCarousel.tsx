@@ -45,7 +45,7 @@ export default function HeroCarousel() {
   return (
     <div className="flex w-full max-w-lg flex-col gap-5">
       {/* Viewport */}
-      <div className="w-full overflow-hidden" style={{ height: SLIDE_H }}>
+      <div className="w-full overflow-hidden bg-[#fffbf8]" style={{ height: SLIDE_H }}>
         <div
           className="transition-transform duration-700 ease-in-out"
           style={{ transform: `translateY(-${active * SLIDE_H}px)` }}
@@ -53,7 +53,7 @@ export default function HeroCarousel() {
           {slides.map(({ Component }, i) => (
             <div
               key={i}
-              className="flex items-center justify-center"
+              className="flex items-center justify-center bg-[#fffbf8]"
               style={{ height: SLIDE_H }}
             >
               <Component />
