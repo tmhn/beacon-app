@@ -53,7 +53,7 @@ export default function HeroCarousel() {
           {slides.map(({ Component }, i) => (
             <div
               key={i}
-              className="flex items-center justify-center bg-[#fffbf8]"
+              className="flex items-center justify-center overflow-hidden bg-[#fffbf8]"
               style={{ height: SLIDE_H }}
             >
               <Component />
