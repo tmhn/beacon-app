@@ -1,3 +1,4 @@
+import Image from "next/image";
 import HeroCarousel from "@/components/HeroCarousel";
 
 export default function Hero() {
@@ -6,9 +7,12 @@ export default function Hero() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-14 md:grid-cols-2 md:gap-14 md:py-32">
         {/* Left: copy */}
         <div className="flex flex-col items-start gap-7">
-          <p className="text-xs font-semibold uppercase tracking-widest text-orange-500">
-            Claude AI Skill
-          </p>
+          <div className="flex items-center gap-2">
+            <Image src="/icon.png" alt="Beacon" width={20} height={20} />
+            <p className="text-xs font-semibold uppercase tracking-widest text-orange-500">
+              Beacon · Claude AI Skill
+            </p>
+          </div>
 
           <h1 className="text-5xl font-extrabold leading-[1.08] tracking-tighter text-gray-900 sm:text-6xl lg:text-7xl">
             No docs?
