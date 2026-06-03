@@ -1,18 +1,17 @@
 // Option A: Terminal stream — shows Beacon running live
 const lines = [
-  { type: "cmd", text: "$ beacon analyze ." },
-  { type: "dim", text: "" },
-  { type: "ok", text: "✓  Entry points found      src/index.ts, api/server.ts" },
-  { type: "ok", text: "✓  Module graph mapped      47 nodes, 128 edges" },
-  { type: "ok", text: "✓  Patterns identified      REST + event-driven" },
-  { type: "ok", text: "✓  Conventions extracted    ESM, path aliases, Zod schemas" },
-  { type: "dim", text: "" },
+  { type: "cmd",  text: "$ beacon analyze ." },
+  { type: "dim",  text: "" },
+  { type: "ok",   text: "✓  entry points    2 found" },
+  { type: "ok",   text: "✓  module graph    47 nodes, 128 edges" },
+  { type: "ok",   text: "✓  patterns        REST, ESM, Zod" },
+  { type: "ok",   text: "✓  conventions     typed, path aliases" },
+  { type: "dim",  text: "" },
   { type: "head", text: "Architecture" },
-  { type: "body", text: "  Node.js monorepo (3 services). Primary entry via" },
-  { type: "body", text: "  src/index.ts. Auth handled in middleware/, shared" },
-  { type: "body", text: "  types in packages/core. No README — generated." },
-  { type: "dim", text: "" },
-  { type: "done", text: "● Report saved to .beacon/report.md" },
+  { type: "body", text: "  Node.js monorepo · 3 services" },
+  { type: "body", text: "  no README — generated from source" },
+  { type: "dim",  text: "" },
+  { type: "done", text: "● report saved  .beacon/report.md" },
 ];
 
 export default function HeroMockupA() {
