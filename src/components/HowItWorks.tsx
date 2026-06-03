@@ -11,24 +11,24 @@ function TerminalArtifact() {
   const bar = ["█░░", "██░", "███"][tick];
 
   return (
-    <div className="overflow-hidden rounded-xl bg-black/60 ring-1 ring-white/10">
+    <div className="overflow-hidden rounded-xl ring-1 ring-white/15" style={{ background: "rgba(255,255,255,0.05)" }}>
       <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-2.5">
-        <span className="h-2 w-2 rounded-full bg-red-500/60" />
-        <span className="h-2 w-2 rounded-full bg-yellow-500/60" />
-        <span className="h-2 w-2 rounded-full bg-green-500/60" />
-        <span className="ml-2 text-[10px] text-white/30">zsh</span>
+        <span className="h-2 w-2 rounded-full bg-red-500/70" />
+        <span className="h-2 w-2 rounded-full bg-yellow-500/70" />
+        <span className="h-2 w-2 rounded-full bg-green-500/70" />
+        <span className="ml-2 text-[10px] text-white/40">zsh</span>
       </div>
       <div className="p-4 font-mono text-[11px] leading-6">
-        <p className="text-white/80">
+        <p className="text-white/90">
           <span className="text-orange-400">$</span> beacon analyze .
         </p>
-        <p className="text-white/30">
+        <p className="text-white/40">
           ↳ scanning 247 files {bar}
         </p>
         <div className="mt-2 space-y-0.5">
-          <p><span className="text-emerald-400">✓</span><span className="ml-2 text-white/50">entry points  </span><span className="text-white/80">2</span></p>
-          <p><span className="text-emerald-400">✓</span><span className="ml-2 text-white/50">modules       </span><span className="text-white/80">47</span></p>
-          <p><span className="text-emerald-400">✓</span><span className="ml-2 text-white/50">patterns      </span><span className="text-white/80">4</span></p>
+          <p><span className="text-emerald-400">✓</span><span className="ml-2 text-white/55">entry points  </span><span className="text-white/90">2</span></p>
+          <p><span className="text-emerald-400">✓</span><span className="ml-2 text-white/55">modules       </span><span className="text-white/90">47</span></p>
+          <p><span className="text-emerald-400">✓</span><span className="ml-2 text-white/55">patterns      </span><span className="text-white/90">4</span></p>
         </div>
       </div>
     </div>
@@ -48,9 +48,9 @@ function GraphArtifact() {
   ];
 
   return (
-    <div className="overflow-hidden rounded-xl bg-black/60 ring-1 ring-white/10">
+    <div className="overflow-hidden rounded-xl ring-1 ring-white/15" style={{ background: "rgba(255,255,255,0.05)" }}>
       <div className="border-b border-white/10 px-4 py-2.5">
-        <span className="text-[10px] font-semibold text-white/30">module graph</span>
+        <span className="text-[10px] font-semibold text-white/50">module graph</span>
       </div>
       <div className="flex items-center justify-center p-4">
         <svg width="220" height="160" viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg">
@@ -62,28 +62,32 @@ function GraphArtifact() {
                 key={`${a}-${b}`}
                 x1={from.x} y1={from.y}
                 x2={to.x}   y2={to.y}
-                stroke="#fb4f39" strokeWidth={1} opacity={0.5}
+                stroke="#fb4f39" strokeWidth={1.5} opacity={0.7}
               />
             );
           })}
           {nodes.map(({ id, x, y, label, entry }) => (
             <g key={id}>
-              {entry && (
-                <circle cx={x} cy={y} r={26} fill="#fb4f39" opacity={0.12} />
-              )}
+              {/* Glow ring */}
+              <circle
+                cx={x} cy={y} r={entry ? 26 : 22}
+                fill={entry ? "#fb4f39" : "none"}
+                opacity={entry ? 0.15 : 0}
+              />
+              {/* Node circle */}
               <circle
                 cx={x} cy={y} r={18}
-                fill={entry ? "#fb4f39" : "#1f2937"}
-                stroke={entry ? "none" : "rgba(255,255,255,0.12)"}
-                strokeWidth={1}
+                fill={entry ? "#fb4f39" : "rgba(255,255,255,0.08)"}
+                stroke={entry ? "none" : "rgba(255,255,255,0.3)"}
+                strokeWidth={1.5}
               />
               <text
                 x={x} y={y + 3.5}
                 textAnchor="middle"
                 fontSize={7}
                 fontFamily="ui-monospace, Menlo, monospace"
-                fill={entry ? "white" : "rgba(255,255,255,0.6)"}
-                fontWeight={entry ? 600 : 400}
+                fill={entry ? "white" : "rgba(255,255,255,0.9)"}
+                fontWeight={entry ? 700 : 500}
               >
                 {label}
               </text>
@@ -103,18 +107,18 @@ function ReportArtifact() {
     { key: "Modules",      val: "47 nodes, 128 edges" },
   ];
   return (
-    <div className="overflow-hidden rounded-xl bg-black/60 ring-1 ring-white/10">
+    <div className="overflow-hidden rounded-xl ring-1 ring-white/15" style={{ background: "rgba(255,255,255,0.05)" }}>
       <div className="flex items-center justify-between border-b border-white/10 px-4 py-2.5">
         <span className="font-mono text-[10px] text-orange-400">.beacon/report.md</span>
-        <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[9px] font-semibold text-emerald-400">
+        <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[9px] font-semibold text-emerald-400">
           ready
         </span>
       </div>
-      <div className="divide-y divide-white/5 px-4 py-1">
+      <div className="divide-y divide-white/8 px-4 py-1">
         {rows.map(({ key, val }) => (
           <div key={key} className="flex items-baseline gap-3 py-2">
-            <span className="w-24 shrink-0 text-[10px] text-white/35">{key}</span>
-            <span className="font-mono text-[10px] text-white/75">{val}</span>
+            <span className="w-24 shrink-0 text-[10px] text-white/45">{key}</span>
+            <span className="font-mono text-[10px] text-white/85">{val}</span>
           </div>
         ))}
       </div>
@@ -196,8 +200,8 @@ export default function HowItWorks() {
                 opacity: visible ? 1 : 0,
                 transform: visible ? "translateY(0)" : "translateY(28px)",
                 transitionDelay: visible ? `${i * 130}ms` : "0ms",
-                background: "rgba(255,255,255,0.03)",
-                borderColor: "rgba(255,255,255,0.08)",
+                background: "rgba(255,255,255,0.06)",
+                borderColor: "rgba(255,255,255,0.12)",
               }}
             >
               {/* Faint large numeral */}
@@ -220,7 +224,7 @@ export default function HowItWorks() {
               <h3 className="mb-2 text-base font-bold leading-snug text-white">
                 {title}
               </h3>
-              <p className="mb-6 text-sm leading-relaxed text-white/45">
+              <p className="mb-6 text-sm leading-relaxed text-white/60">
                 {body}
               </p>
 
