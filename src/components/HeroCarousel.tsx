@@ -6,7 +6,7 @@ import HeroMockupB from "./HeroMockupB";
 import HeroMockupC from "./HeroMockupC";
 
 const DURATION = 4000;
-const SLIDE_H = 440;
+const SLIDE_H = 500;
 
 const slides = [
   { Component: HeroMockupA, label: "Discover" },
@@ -53,7 +53,7 @@ export default function HeroCarousel() {
           {slides.map(({ Component }, i) => (
             <div
               key={i}
-              className="flex items-center justify-center overflow-hidden bg-[#fffbf8]"
+              className="flex items-center justify-center overflow-hidden bg-[#fffbf8] py-4"
               style={{ height: SLIDE_H }}
             >
               <Component />
