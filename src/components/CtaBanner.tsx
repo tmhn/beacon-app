@@ -35,7 +35,8 @@ export default function CtaBanner() {
         </p>
         <Link
           href="/install"
-          className="inline-block rounded-full bg-white px-9 py-3.5 text-sm font-bold text-orange-500 shadow-lg shadow-orange-700/30 transition-all hover:bg-orange-50 hover:shadow-xl"
+          className="inline-block rounded-full bg-white px-9 py-3.5 text-sm font-bold text-orange-500 shadow-lg shadow-orange-700/30 hover:-translate-y-0.5 hover:bg-orange-50 hover:shadow-xl hover:shadow-orange-700/40"
+          style={{ transition: "translate 500ms cubic-bezier(0.22,1,0.36,1), box-shadow 300ms ease-out, background-color 200ms ease-out" }}
         >
           Install the skill
         </Link>

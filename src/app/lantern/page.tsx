@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import LanternSubNav from "@/components/LanternSubNav";
 import Image from "next/image";
 import Link from "next/link";
 import { LanternIcon, LanternMockup } from "@/components/LanternMockup";
@@ -152,7 +153,7 @@ const featureIcons: Record<string, React.ReactElement> = {
 
 function HeroSection() {
   return (
-    <section className="bg-[#fffdf8]">
+    <section id="overview" className="bg-[#fffdf8]">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-14 md:grid-cols-2 md:gap-14 md:py-28">
         <div className="flex flex-col items-start gap-7">
           <div className="flex items-center gap-2">
@@ -175,13 +176,15 @@ function HeroSection() {
           <div className="flex flex-wrap items-center gap-3">
             <a
               href="#"
-              className="rounded-full bg-amber-500 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-amber-200 transition-all hover:bg-amber-600 hover:shadow-amber-300"
+              className="rounded-full bg-amber-500 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-amber-200 hover:-translate-y-0.5 hover:bg-amber-600 hover:shadow-amber-300"
+              style={{ transition: "translate 500ms cubic-bezier(0.22,1,0.36,1), box-shadow 300ms ease-out, background-color 200ms ease-out" }}
             >
               View example Lantern
             </a>
             <Link
               href="/install"
-              className="rounded-full border border-gray-200 bg-white px-7 py-3 text-sm font-semibold text-gray-700 transition-all hover:border-gray-300 hover:bg-gray-50"
+              className="rounded-full border border-gray-200 bg-white px-7 py-3 text-sm font-semibold text-gray-700 hover:-translate-y-0.5 hover:border-gray-300 hover:bg-gray-50"
+              style={{ transition: "translate 500ms cubic-bezier(0.22,1,0.36,1), border-color 200ms ease-out, background-color 200ms ease-out" }}
             >
               Run Beacon first →
             </Link>
@@ -327,7 +330,7 @@ function FeatureCardsSection() {
   ];
 
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section id="lantern-features" className="bg-white py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-14">
           <h2 className="text-3xl font-extrabold tracking-tighter text-gray-900 sm:text-4xl">
@@ -339,15 +342,17 @@ function FeatureCardsSection() {
         </div>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {features.map(({ icon, title, body }) => (
-            <div
-              key={title}
-              className="group rounded-xl border border-gray-100 bg-white p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-amber-100 hover:shadow-lg hover:shadow-amber-50"
-            >
-              <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-amber-500 transition-colors group-hover:bg-amber-500 group-hover:text-white">
-                {icon}
+            <div key={title} className="group h-full">
+              <div
+                className="h-full rounded-xl border border-gray-100 bg-white p-7 shadow-sm group-hover:-translate-y-1 group-hover:border-amber-100 group-hover:bg-amber-50/30 group-hover:shadow-lg group-hover:shadow-amber-100/50"
+                style={{ transition: "translate 600ms cubic-bezier(0.22,1,0.36,1), box-shadow 400ms ease-out, border-color 400ms ease-out, background-color 400ms ease-out" }}
+              >
+                <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-amber-500 transition-[background-color,color,scale] duration-300 ease-out group-hover:scale-105 group-hover:bg-amber-500 group-hover:text-white">
+                  {icon}
+                </div>
+                <h3 className="mb-2.5 text-base font-bold text-gray-900">{title}</h3>
+                <p className="text-sm leading-relaxed text-gray-500">{body}</p>
               </div>
-              <h3 className="mb-2.5 text-base font-bold text-gray-900">{title}</h3>
-              <p className="text-sm leading-relaxed text-gray-500">{body}</p>
             </div>
           ))}
         </div>
@@ -358,7 +363,7 @@ function FeatureCardsSection() {
 
 function RelationshipSection() {
   return (
-    <section className="bg-[#fffdf8] py-16 md:py-24">
+    <section id="relationship" className="bg-[#fffdf8] py-16 md:py-24">
       <div className="mx-auto max-w-5xl px-6">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-extrabold tracking-tighter text-gray-900 sm:text-4xl">
@@ -470,13 +475,15 @@ function CtaBannerSection() {
         <div className="flex flex-wrap items-center justify-center gap-3">
           <a
             href="#"
-            className="inline-block rounded-full bg-white px-9 py-3.5 text-sm font-bold text-amber-600 shadow-lg shadow-amber-700/30 transition-all hover:bg-amber-50 hover:shadow-xl"
+            className="inline-block rounded-full bg-white px-9 py-3.5 text-sm font-bold text-amber-600 shadow-lg shadow-amber-700/30 hover:-translate-y-0.5 hover:bg-amber-50 hover:shadow-xl hover:shadow-amber-700/40"
+            style={{ transition: "translate 500ms cubic-bezier(0.22,1,0.36,1), box-shadow 300ms ease-out, background-color 200ms ease-out" }}
           >
             View example Lantern
           </a>
           <Link
             href="/install"
-            className="inline-block rounded-full border border-white/30 px-9 py-3.5 text-sm font-semibold text-white transition-all hover:border-white/60 hover:bg-white/10"
+            className="inline-block rounded-full border border-white/30 px-9 py-3.5 text-sm font-semibold text-white hover:-translate-y-0.5 hover:border-white/60 hover:bg-white/10"
+            style={{ transition: "translate 500ms cubic-bezier(0.22,1,0.36,1), border-color 200ms ease-out, background-color 200ms ease-out" }}
           >
             Run Beacon first →
           </Link>
@@ -492,6 +499,7 @@ export default function LanternPage() {
   return (
     <>
       <Nav />
+      <LanternSubNav />
       <HeroSection />
       <SignalBridgeSection />
       <HowItWorksSection />

@@ -81,8 +81,11 @@ export default function FeatureCards() {
               {/* Hover zone: captures mouse events but never moves — prevents jitter */}
               <div className="group h-full">
                 {/* Visual card: lifts on group-hover, no direct hover listener */}
-                <div className="h-full rounded-xl border border-gray-100 bg-white p-7 shadow-sm transition-[transform,box-shadow,border-color] duration-300 ease-out group-hover:-translate-y-1.5 group-hover:border-orange-100 group-hover:shadow-xl group-hover:shadow-orange-100/50">
-                  <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50 text-orange-500 transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                <div
+                  className="h-full rounded-xl border border-gray-100 bg-white p-7 shadow-sm group-hover:-translate-y-1.5 group-hover:border-orange-100 group-hover:bg-orange-50/30 group-hover:shadow-xl group-hover:shadow-orange-100/50"
+                  style={{ transition: "translate 600ms cubic-bezier(0.22,1,0.36,1), box-shadow 400ms ease-out, border-color 400ms ease-out, background-color 400ms ease-out" }}
+                >
+                  <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50 text-orange-500 transition-[background-color,color,scale] duration-300 ease-out group-hover:scale-105 group-hover:bg-orange-500 group-hover:text-white">
                     {icon}
                   </div>
                   <h3 className="mb-2.5 text-base font-bold text-gray-900">

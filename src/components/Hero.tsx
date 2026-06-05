@@ -41,13 +41,15 @@ export default function Hero() {
           >
             <Link
               href="/install"
-              className="rounded-full bg-orange-500 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-orange-200 transition-all hover:bg-orange-600 hover:shadow-orange-300"
+              className="rounded-full bg-orange-500 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-orange-200 hover:-translate-y-0.5 hover:bg-orange-600 hover:shadow-orange-300"
+              style={{ transition: "translate 500ms cubic-bezier(0.22,1,0.36,1), box-shadow 300ms ease-out, background-color 200ms ease-out" }}
             >
               Install the skill
             </Link>
             <a
               href="#how-it-works"
-              className="rounded-full border border-gray-200 bg-white px-7 py-3 text-sm font-semibold text-gray-700 transition-all hover:border-gray-300 hover:bg-gray-50"
+              className="rounded-full border border-gray-200 bg-white px-7 py-3 text-sm font-semibold text-gray-700 hover:-translate-y-0.5 hover:border-gray-300 hover:bg-gray-50"
+              style={{ transition: "translate 500ms cubic-bezier(0.22,1,0.36,1), border-color 200ms ease-out, background-color 200ms ease-out" }}
             >
               See how it works →
             </a>
