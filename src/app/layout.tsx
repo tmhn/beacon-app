@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ScrollRestoration from "@/components/ScrollRestoration";
 
 const title = "Beacon — Project intelligence for any codebase";
 const description =
@@ -28,7 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="antialiased scroll-smooth">
-      <body className="min-h-screen bg-white text-gray-900">{children}</body>
+      <body className="min-h-screen bg-white text-gray-900">
+        <ScrollRestoration />
+        {children}
+      </body>
     </html>
   );
 }
