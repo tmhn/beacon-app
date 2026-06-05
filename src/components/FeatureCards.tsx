@@ -35,6 +35,9 @@ export default function FeatureCards() {
     <section id="features" className="bg-white py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-14">
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
+            Features
+          </p>
           <h2 className="text-3xl font-extrabold tracking-tighter text-gray-900 sm:text-4xl">
             Everything your team needs to get up to speed
           </h2>
