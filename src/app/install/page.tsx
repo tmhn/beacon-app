@@ -72,6 +72,8 @@ export default function InstallPage() {
               <strong>Don&apos;t have Claude Code?</strong> Download it at{" "}
               <a
                 href="https://claude.ai/code"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="underline hover:text-orange-700"
               >
                 claude.ai/code
