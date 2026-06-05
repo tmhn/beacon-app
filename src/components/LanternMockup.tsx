@@ -30,7 +30,7 @@ export function LanternMockup() {
           <span className="text-[11px] text-gray-300">/</span>
           <span className="text-[11px] font-medium text-gray-500">acme-api</span>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="hidden items-center gap-3 sm:flex">
           {["Overview", "Signals", "Risks", "Docs"].map((tab, i) => (
             <span
               key={tab}

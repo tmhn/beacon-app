@@ -30,7 +30,7 @@ function TerminalArtifact() {
 
 function ModeArtifact() {
   return (
-    <div className="grid grid-cols-2 gap-3">
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
       {[
         {
           name: "Candle",
@@ -202,7 +202,7 @@ function SignalBridgeSection() {
           Beacon finds the signal.{" "}
           <span className="font-semibold text-gray-800">Lantern keeps it lit.</span>
         </p>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           {["Overview", "Architecture", "Risks", "Docs", "Tasks", "Agent Brief"].map(chip => (
             <span key={chip} className="rounded-full border border-amber-100 bg-amber-50 px-3.5 py-1.5 text-xs font-semibold text-amber-600">
               {chip}

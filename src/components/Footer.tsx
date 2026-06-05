@@ -32,8 +32,8 @@ export default function Footer() {
   return (
     <footer className="border-t border-gray-100 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-          <div className="col-span-2 md:col-span-1">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
+          <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/icon.png" alt="Beacon" width={18} height={18} />
               <span className="text-sm font-bold text-gray-900">Beacon</span>

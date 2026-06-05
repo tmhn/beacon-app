@@ -45,8 +45,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: carousel */}
-        <div className="flex justify-center md:justify-end">
+        {/* Right: carousel — desktop only; hidden on mobile to keep hero tight */}
+        <div className="hidden justify-center md:flex md:justify-end">
           <HeroCarousel />
         </div>
       </div>
