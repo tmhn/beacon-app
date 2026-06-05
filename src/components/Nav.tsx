@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const links = [
-  { label: "Features", href: "#features" },
-  { label: "How it works", href: "#how-it-works" },
+  { label: "Features", href: "/#features" },
+  { label: "How it works", href: "/#how-it-works" },
   { label: "Lantern", href: "/lantern" },
   { label: "Docs", href: "/docs" },
 ] as const;
