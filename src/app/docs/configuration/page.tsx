@@ -18,7 +18,7 @@ export default function ConfigurationPage() {
           ← Commands
         </Link>
         <Link href="/docs/output-reports" className="text-sm font-semibold text-orange-500 hover:text-orange-600">
-          Output & reports →
+          Output &amp; reports →
         </Link>
       </div>
     </article>
