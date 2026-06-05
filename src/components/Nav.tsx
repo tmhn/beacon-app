@@ -27,13 +27,13 @@ export default function Nav() {
         {/* Centre links — desktop only */}
         <nav className="hidden items-center gap-8 md:flex">
           {links.map(({ label, href }) => (
-            <a
+            <Link
               key={label}
               href={href}
               className="text-sm text-gray-500 transition-colors hover:text-gray-900"
             >
               {label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -63,14 +63,14 @@ export default function Nav() {
         <div className="border-t border-gray-100 bg-white px-6 py-4 md:hidden">
           <nav className="flex flex-col gap-4">
             {links.map(({ label, href }) => (
-              <a
+              <Link
                 key={label}
                 href={href}
                 onClick={() => setOpen(false)}
                 className="text-sm text-gray-600 transition-colors hover:text-gray-900"
               >
                 {label}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>

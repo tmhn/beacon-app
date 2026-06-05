@@ -26,7 +26,7 @@ export default function Hero() {
           <p className="max-w-md text-lg leading-relaxed text-gray-500">
             Drop into any unclear, unfamiliar, or undocumented codebase.
             Beacon&apos;s agent-driven workflow surfaces what matters so
-            you, and your AI tools, can move fast.
+            you — and your AI tools — can move fast.
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
