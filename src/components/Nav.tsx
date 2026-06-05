@@ -7,7 +7,7 @@ import Link from "next/link";
 const links = [
   { label: "Features", href: "#features" },
   { label: "How it works", href: "#how-it-works" },
-  { label: "Lantern", href: "/lantern", amber: true },
+  { label: "Lantern", href: "/lantern" },
   { label: "Docs", href: "/docs" },
 ] as const;
 
@@ -27,11 +27,11 @@ export default function Nav() {
 
         {/* Centre links — desktop only */}
         <nav className="hidden items-center gap-8 md:flex">
-          {links.map(({ label, href, ...rest }) => (
+          {links.map(({ label, href }) => (
             <Link
               key={label}
               href={href}
-              className={`text-sm transition-colors ${"amber" in rest && rest.amber ? "font-semibold text-amber-600 hover:text-amber-800" : "text-gray-500 hover:text-gray-900"}`}
+              className="text-sm text-gray-500 transition-colors hover:text-gray-900"
             >
               {label}
             </Link>
@@ -63,12 +63,12 @@ export default function Nav() {
       {open && (
         <div className="border-t border-gray-100 bg-white px-6 py-4 md:hidden">
           <nav className="flex flex-col gap-4">
-            {links.map(({ label, href, ...rest }) => (
+            {links.map(({ label, href }) => (
               <Link
                 key={label}
                 href={href}
                 onClick={() => setOpen(false)}
-                className={`text-sm transition-colors ${"amber" in rest && rest.amber ? "font-semibold text-amber-600 hover:text-amber-800" : "text-gray-600 hover:text-gray-900"}`}
+                className="text-sm text-gray-600 transition-colors hover:text-gray-900"
               >
                 {label}
               </Link>
