@@ -69,7 +69,7 @@ export default function FeatureCards() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {features.map(({ icon, title, body }, i) => (
-            /* Outer div: owns scroll-reveal only — no hover transitions here */
+            /* Reveal div: opacity/transform for scroll-in only */
             <div
               key={title}
               style={{
@@ -78,15 +78,18 @@ export default function FeatureCards() {
                 transition: `opacity 0.6s ease-out ${(i + 1) * 90}ms, transform 0.6s ease-out ${(i + 1) * 90}ms`,
               }}
             >
-              {/* Inner div: owns hover only — no scroll-reveal transitions here */}
-              <div className="group h-full rounded-xl border border-gray-100 bg-white p-7 shadow-sm transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1.5 hover:border-orange-100 hover:shadow-xl hover:shadow-orange-100/50">
-                <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50 text-orange-500 transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                  {icon}
+              {/* Hover zone: captures mouse events but never moves — prevents jitter */}
+              <div className="group h-full">
+                {/* Visual card: lifts on group-hover, no direct hover listener */}
+                <div className="h-full rounded-xl border border-gray-100 bg-white p-7 shadow-sm transition-[transform,box-shadow,border-color] duration-300 ease-out group-hover:-translate-y-1.5 group-hover:border-orange-100 group-hover:shadow-xl group-hover:shadow-orange-100/50">
+                  <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50 text-orange-500 transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                    {icon}
+                  </div>
+                  <h3 className="mb-2.5 text-base font-bold text-gray-900">
+                    {title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-gray-500">{body}</p>
                 </div>
-                <h3 className="mb-2.5 text-base font-bold text-gray-900">
-                  {title}
-                </h3>
-                <p className="text-sm leading-relaxed text-gray-500">{body}</p>
               </div>
             </div>
           ))}
