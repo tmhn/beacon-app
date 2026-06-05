@@ -9,7 +9,9 @@ export default function ScrollRestoration() {
 
   useEffect(() => {
     if (prev.current !== pathname) {
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      if (!window.location.hash) {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      }
       prev.current = pathname;
     }
   }, [pathname]);
