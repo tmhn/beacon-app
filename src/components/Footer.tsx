@@ -7,6 +7,7 @@ const nav = [
     links: [
       { label: "Features", href: "#features" },
       { label: "How it works", href: "#how-it-works" },
+      { label: "Lantern", href: "/lantern" },
       { label: "Changelog", href: "/docs/changelog" },
     ],
   },

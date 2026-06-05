@@ -4,6 +4,7 @@ import TrustBar from "@/components/TrustBar";
 import FeatureCards from "@/components/FeatureCards";
 import HowItWorks from "@/components/HowItWorks";
 import AudienceSplit from "@/components/AudienceSplit";
+import LanternTeaser from "@/components/LanternTeaser";
 import CtaBanner from "@/components/CtaBanner";
 import Footer from "@/components/Footer";
 
@@ -15,6 +16,7 @@ export default function Home() {
       <TrustBar />
       <FeatureCards />
       <HowItWorks />
+      <LanternTeaser />
       <AudienceSplit />
       <CtaBanner />
       <Footer />
