@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import Link from "next/link";
 import { LanternIcon, LanternMockup } from "@/components/LanternMockup";
 
@@ -155,7 +156,7 @@ function HeroSection() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-14 md:grid-cols-2 md:gap-14 md:py-28">
         <div className="flex flex-col items-start gap-7">
           <div className="flex items-center gap-2">
-            <LanternIcon size={18} className="text-amber-500" />
+            <Image src="/lantern-icon.png" alt="Lantern" width={20} height={20} />
             <p className="text-xs font-semibold uppercase tracking-widest text-amber-500">
               Lantern · Project Workspace
             </p>
@@ -419,7 +420,7 @@ function RelationshipSection() {
           <div className="rounded-2xl border border-amber-100 bg-white p-8 shadow-sm shadow-amber-50/60">
             <div className="mb-5 flex items-center gap-2.5">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-50">
-                <LanternIcon size={18} className="text-amber-500" />
+                <Image src="/lantern-icon.png" alt="Lantern" width={18} height={18} />
               </div>
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-amber-400">Project workspace</p>
