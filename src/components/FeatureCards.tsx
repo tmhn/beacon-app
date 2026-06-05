@@ -69,22 +69,25 @@ export default function FeatureCards() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {features.map(({ icon, title, body }, i) => (
+            /* Outer div: owns scroll-reveal only — no hover transitions here */
             <div
               key={title}
-              className="group rounded-xl border border-gray-100 bg-white p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-orange-100 hover:shadow-lg hover:shadow-orange-50"
               style={{
                 opacity: visible ? 1 : 0,
                 transform: visible ? "translateY(0)" : "translateY(24px)",
                 transition: `opacity 0.6s ease-out ${(i + 1) * 90}ms, transform 0.6s ease-out ${(i + 1) * 90}ms`,
               }}
             >
-              <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50 text-orange-500 transition-colors group-hover:bg-orange-500 group-hover:text-white">
-                {icon}
+              {/* Inner div: owns hover only — no scroll-reveal transitions here */}
+              <div className="group h-full rounded-xl border border-gray-100 bg-white p-7 shadow-sm transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1.5 hover:border-orange-100 hover:shadow-xl hover:shadow-orange-100/50">
+                <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50 text-orange-500 transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {icon}
+                </div>
+                <h3 className="mb-2.5 text-base font-bold text-gray-900">
+                  {title}
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-500">{body}</p>
               </div>
-              <h3 className="mb-2.5 text-base font-bold text-gray-900">
-                {title}
-              </h3>
-              <p className="text-sm leading-relaxed text-gray-500">{body}</p>
             </div>
           ))}
         </div>
