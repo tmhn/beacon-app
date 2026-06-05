@@ -40,7 +40,7 @@ export default function DocsSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden w-[220px] shrink-0 overflow-y-auto border-r border-gray-100 py-7 md:block">
+    <aside className="hidden w-[220px] shrink-0 self-start sticky top-[69px] h-[calc(100vh-69px)] overflow-y-auto border-r border-gray-100 py-7 md:block">
       {sections.map(({ label, links }) => (
         <div key={label} className="mb-6">
           <p className="mb-1.5 px-5 text-[10px] font-bold uppercase tracking-widest text-gray-300">
