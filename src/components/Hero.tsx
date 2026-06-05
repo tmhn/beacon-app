@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import HeroCarousel from "@/components/HeroCarousel";
 
 export default function Hero() {
@@ -25,16 +26,16 @@ export default function Hero() {
           <p className="max-w-md text-lg leading-relaxed text-gray-500">
             Drop into any unclear, unfamiliar, or undocumented codebase.
             Beacon&apos;s agent-driven workflow surfaces what matters so
-            you — and your AI tools — can move fast.
+            you, and your AI tools, can move fast.
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
-            <a
-              href="#"
+            <Link
+              href="/install"
               className="rounded-full bg-orange-500 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-orange-200 transition-all hover:bg-orange-600 hover:shadow-orange-300"
             >
               Install the skill
-            </a>
+            </Link>
             <a
               href="#how-it-works"
               className="rounded-full border border-gray-200 bg-white px-7 py-3 text-sm font-semibold text-gray-700 transition-all hover:border-gray-300 hover:bg-gray-50"

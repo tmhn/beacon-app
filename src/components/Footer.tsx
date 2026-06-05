@@ -1,11 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const nav: Record<string, string[]> = {
-  Product: ["Features", "How it works", "Changelog"],
-  Docs: ["Getting started", "Installation", "Examples"],
-  More: ["About", "Contact"],
-};
+const nav = [
+  {
+    heading: "Product",
+    links: [
+      { label: "Features", href: "#features" },
+      { label: "How it works", href: "#how-it-works" },
+      { label: "Changelog", href: "/docs/changelog" },
+    ],
+  },
+  {
+    heading: "Docs",
+    links: [
+      { label: "Getting started", href: "/docs" },
+      { label: "Installation", href: "/install" },
+      { label: "Examples", href: "/docs/examples" },
+    ],
+  },
+  {
+    heading: "More",
+    links: [
+      { label: "About", href: "#" },
+      { label: "Contact", href: "#" },
+    ],
+  },
+];
 
 export default function Footer() {
   return (
@@ -22,20 +42,20 @@ export default function Footer() {
             </p>
           </div>
 
-          {Object.entries(nav).map(([heading, links]) => (
+          {nav.map(({ heading, links }) => (
             <div key={heading}>
               <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-gray-400">
                 {heading}
               </p>
               <ul className="space-y-2">
-                {links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
+                {links.map(({ label, href }) => (
+                  <li key={label}>
+                    <Link
+                      href={href}
                       className="text-sm text-gray-500 transition-colors hover:text-gray-900"
                     >
-                      {link}
-                    </a>
+                      {label}
+                    </Link>
                   </li>
                 ))}
               </ul>

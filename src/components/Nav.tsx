@@ -7,7 +7,7 @@ import Link from "next/link";
 const links = [
   { label: "Features", href: "#features" },
   { label: "How it works", href: "#how-it-works" },
-  { label: "Docs", href: "#docs" },
+  { label: "Docs", href: "/docs" },
 ];
 
 export default function Nav() {
@@ -39,12 +39,12 @@ export default function Nav() {
 
         {/* Right actions */}
         <div className="flex items-center gap-3">
-          <a
-            href="#"
+          <Link
+            href="/install"
             className="rounded-full bg-orange-500 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-orange-600"
           >
             Install the skill
-          </a>
+          </Link>
           {/* Hamburger — mobile only */}
           <button
             className="ml-1 flex h-8 w-8 flex-col items-center justify-center gap-1.5 md:hidden"

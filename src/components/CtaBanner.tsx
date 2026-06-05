@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CtaBanner() {
   return (
     <section className="bg-orange-500 py-16 md:py-24">
@@ -8,12 +10,12 @@ export default function CtaBanner() {
         <p className="mb-10 text-lg text-orange-100">
           Install in seconds. No config. No setup. Just Beacon.
         </p>
-        <a
-          href="#"
+        <Link
+          href="/install"
           className="inline-block rounded-full bg-white px-9 py-3.5 text-sm font-bold text-orange-500 shadow-lg shadow-orange-700/30 transition-all hover:bg-orange-50 hover:shadow-xl"
         >
           Install the skill
-        </a>
+        </Link>
       </div>
     </section>
   );
