@@ -1,9 +1,32 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 export default function CtaBanner() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.2 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <section className="bg-orange-500 py-16 md:py-24">
-      <div className="mx-auto max-w-3xl px-6 text-center">
+    <section ref={sectionRef} className="bg-orange-500 py-16 md:py-24">
+      <div
+        className="mx-auto max-w-3xl px-6 text-center transition-all duration-700"
+        style={{
+          opacity: visible ? 1 : 0,
+          transform: visible ? "translateY(0)" : "translateY(20px)",
+        }}
+      >
         <h2 className="mb-4 text-4xl font-extrabold tracking-tighter text-white sm:text-5xl">
           Ready to illuminate<br />your codebase?
         </h2>

@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 const features = [
   {
     icon: (
@@ -31,10 +35,30 @@ const features = [
 ];
 
 export default function FeatureCards() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <section id="features" className="bg-white py-16 md:py-24">
+    <section ref={sectionRef} id="features" className="bg-white py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-14">
+        <div
+          className="mb-14 transition-all duration-700"
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateY(0)" : "translateY(20px)",
+          }}
+        >
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
             Features
           </p>
@@ -44,10 +68,15 @@ export default function FeatureCards() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {features.map(({ icon, title, body }) => (
+          {features.map(({ icon, title, body }, i) => (
             <div
               key={title}
               className="group rounded-xl border border-gray-100 bg-white p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-orange-100 hover:shadow-lg hover:shadow-orange-50"
+              style={{
+                opacity: visible ? 1 : 0,
+                transform: visible ? "translateY(0)" : "translateY(24px)",
+                transition: `opacity 0.6s ease-out ${(i + 1) * 90}ms, transform 0.6s ease-out ${(i + 1) * 90}ms`,
+              }}
             >
               <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50 text-orange-500 transition-colors group-hover:bg-orange-500 group-hover:text-white">
                 {icon}

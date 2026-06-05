@@ -1,12 +1,35 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { LanternMockup } from "@/components/LanternMockup";
 
 export default function LanternTeaser() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <section className="bg-[#fef9ee] py-20 md:py-28">
+    <section ref={sectionRef} className="bg-[#fef9ee] py-20 md:py-28">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-2 md:gap-20">
-        {/* Copy */}
-        <div>
+        {/* Copy — slides in from the left */}
+        <div
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateX(0)" : "translateX(-24px)",
+            transition: "opacity 0.7s ease-out, transform 0.7s ease-out",
+          }}
+        >
           <div className="mb-5 inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5">
             <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-amber-600">
               Meet Lantern
@@ -30,8 +53,15 @@ export default function LanternTeaser() {
           </Link>
         </div>
 
-        {/* Visual — same mockup as Lantern hero */}
-        <div className="flex justify-center md:justify-end">
+        {/* Visual — slides in from the right */}
+        <div
+          className="flex justify-center md:justify-end"
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateX(0)" : "translateX(24px)",
+            transition: "opacity 0.7s ease-out 150ms, transform 0.7s ease-out 150ms",
+          }}
+        >
           <LanternMockup />
         </div>
       </div>

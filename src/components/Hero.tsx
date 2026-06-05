@@ -8,14 +8,17 @@ export default function Hero() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-14 md:grid-cols-2 md:gap-14 md:py-32">
         {/* Left: copy */}
         <div className="flex flex-col items-start gap-7">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2" style={{ animation: "fade-in-up 0.5s ease-out backwards" }}>
             <Image src="/icon.png" alt="Beacon" width={20} height={20} />
             <p className="text-xs font-semibold uppercase tracking-widest text-orange-500">
               Beacon · Claude AI Skill
             </p>
           </div>
 
-          <h1 className="text-5xl font-extrabold leading-[1.08] tracking-tighter text-gray-900 sm:text-6xl lg:text-7xl">
+          <h1
+            className="text-5xl font-extrabold leading-[1.08] tracking-tighter text-gray-900 sm:text-6xl lg:text-7xl"
+            style={{ animation: "fade-in-up 0.55s ease-out backwards", animationDelay: "80ms" }}
+          >
             No docs?
             <br />
             No problem.
@@ -23,13 +26,19 @@ export default function Hero() {
             <span className="text-orange-500">Beacon finds<br />the signal.</span>
           </h1>
 
-          <p className="max-w-md text-lg leading-relaxed text-gray-500">
+          <p
+            className="max-w-md text-lg leading-relaxed text-gray-500"
+            style={{ animation: "fade-in-up 0.55s ease-out backwards", animationDelay: "180ms" }}
+          >
             Drop into any unclear, unfamiliar, or undocumented codebase.
             Beacon&apos;s agent-driven workflow surfaces what matters so
             you — and your AI tools — can move fast.
           </p>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div
+            className="flex flex-wrap items-center gap-3"
+            style={{ animation: "fade-in-up 0.55s ease-out backwards", animationDelay: "280ms" }}
+          >
             <Link
               href="/install"
               className="rounded-full bg-orange-500 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-orange-200 transition-all hover:bg-orange-600 hover:shadow-orange-300"
