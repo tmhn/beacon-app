@@ -4,6 +4,7 @@ import LanternSubNav from "@/components/LanternSubNav";
 import Image from "next/image";
 import Link from "next/link";
 import { LanternIcon, LanternMockup } from "@/components/LanternMockup";
+import StepFlow from "@/components/StepFlow";
 
 // ─── How it works — step artifacts ───────────────────────────────────────────
 
@@ -282,13 +283,8 @@ function HowItWorksSection() {
           ))}
         </div>
 
-        <div className="mt-10 hidden items-center justify-center gap-3 md:flex">
-          {steps.map(({ tag }, i) => (
-            <div key={tag} className="flex items-center gap-3">
-              <span className="text-[11px] font-semibold text-amber-300">{tag}</span>
-              {i < steps.length - 1 && <span className="text-amber-200">——→</span>}
-            </div>
-          ))}
+        <div className="mt-10 hidden items-center justify-center gap-4 md:flex">
+          <StepFlow steps={steps.map(({ tag }) => tag)} variant="lantern" />
         </div>
       </div>
     </section>
@@ -380,10 +376,7 @@ function RelationshipSection() {
           <div className="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm">
             <div className="mb-5 flex items-center gap-2.5">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-orange-50">
-                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                  <circle cx="10" cy="10" r="3" fill="#fb4f39" />
-                  <path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.22 4.22l1.42 1.42M14.36 14.36l1.42 1.42M4.22 15.78l1.42-1.42M14.36 5.64l1.42-1.42" stroke="#fb4f39" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
+                <Image src="/icon.png" alt="Beacon" width={18} height={18} />
               </div>
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-orange-400">Claude AI skill</p>
@@ -425,7 +418,7 @@ function RelationshipSection() {
           <div className="rounded-2xl border border-amber-100 bg-white p-8 shadow-sm shadow-amber-50/60">
             <div className="mb-5 flex items-center gap-2.5">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-amber-50">
-                <Image src="/lantern-icon.png" alt="Lantern" width={18} height={18} />
+                <Image src="/lantern-icon.png" alt="Lantern" width={24} height={24} />
               </div>
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-amber-400">Project workspace</p>

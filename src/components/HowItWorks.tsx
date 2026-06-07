@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import StepFlow from "@/components/StepFlow";
 
 function TerminalArtifact() {
   const [tick, setTick] = useState(0);
@@ -236,17 +237,10 @@ export default function HowItWorks() {
 
         {/* Connector hint */}
         <div
-          className="mt-10 hidden items-center justify-center gap-3 transition-all delay-500 duration-700 md:flex"
+          className="mt-10 hidden items-center justify-center gap-4 transition-all delay-500 duration-700 md:flex"
           style={{ opacity: visible ? 1 : 0 }}
         >
-          {STEPS.map(({ tag }, i) => (
-            <div key={tag} className="flex items-center gap-3">
-              <span className="text-[11px] font-semibold text-white/25">{tag}</span>
-              {i < STEPS.length - 1 && (
-                <span className="text-white/15">——→</span>
-              )}
-            </div>
-          ))}
+          <StepFlow steps={STEPS.map(({ tag }) => tag)} variant="beacon" />
         </div>
 
       </div>
