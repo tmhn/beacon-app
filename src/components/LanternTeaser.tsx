@@ -37,8 +37,8 @@ export default function LanternTeaser() {
           </div>
           <h2 className="mb-5 text-4xl font-extrabold leading-[1.1] tracking-tighter text-gray-900 sm:text-5xl">
             Beacon finds<br />
-            the signal.<br />
-            <span className="text-amber-500">Lantern keeps<br />it lit.</span>
+            the path.<br />
+            <span className="text-amber-500">Lantern lights<br />the way.</span>
           </h2>
           <p className="mb-8 max-w-md text-base leading-relaxed text-gray-500">
             Once Beacon surfaces your codebase, Lantern turns that knowledge
